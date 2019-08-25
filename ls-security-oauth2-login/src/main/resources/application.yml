@@ -1,0 +1,33 @@
+server:
+  servlet:
+    context-path: /ui
+    session:
+      cookie:
+        name: uisession
+  port: 8002
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          okta:
+            client-id: okta-client-id
+            client-secret: secret
+        provider:
+          okta:
+            authorization-uri: http://localhost:8001/auth/oauth/authorize
+            token-uri: http://localhost:8001/auth/oauth/token
+            user-info-uri: http://localhost:8001/auth/oauth/userinfo
+            user-name-attribute: sub
+            jwk-set-uri: http://localhost:8001/auth/oauth/keys
+            scope: user-info
+  thymeleaf:
+    cache: false
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+    org.springframework.security.oauth2: DEBUG
