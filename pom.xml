@@ -13,6 +13,7 @@
         <module>ls-security-auth-server</module>
         <module>ls-security-oauth2-login</module>
         <module>ls-security-resource-server</module>
+        <module>ls-security-basic-jdbc</module>
     </modules>
 
     <properties>
